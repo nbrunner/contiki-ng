@@ -97,11 +97,6 @@
 #define TSCH_CONF_CHANNEL_SCAN_DURATION (CLOCK_SECOND / 10)
 #endif
 
-/* Slightly reduce the TSCH guard time (from 2200 usec to 1800 usec) to make sure
- * the CC26xx radio has sufficient time to start up. */
-#ifndef TSCH_CONF_RX_WAIT
-#define TSCH_CONF_RX_WAIT 1800
-#endif
 /*---------------------------------------------------------------------------*/
 /* Path to CMSIS header */
 #if (DeviceFamily_PARENT == DeviceFamily_PARENT_CC13X0_CC26X0)
