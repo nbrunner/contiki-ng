@@ -41,7 +41,7 @@
 #include "rf/dot-15-4g.h"
 #include "prop-settings.h"
 /*---------------------------------------------------------------------------*/
-#if DOT_15_4G_OPERATING_MODE == 1
+#if DOT_15_4G_OPERATING_MODE == 3
 /* TI-RTOS RF Mode Object */
 RF_Mode rf_prop_mode =
 {
@@ -75,6 +75,8 @@ uint32_t rf_prop_overrides[] CC_ALIGN(4) =
   // Tx: Set PA trim to max to maximize its output power (in ADI0, set PACTL0=0xF8)
   ADI_REG_OVERRIDE(0,12,0xF8),
 #endif
+  // For using 4-GFSK
+  HW_REG_OVERRIDE(0x6096,0x001C),
   (uint32_t)0xFFFFFFFF,
 };
 /*---------------------------------------------------------------------------*/
@@ -92,18 +94,18 @@ rfc_CMD_PROP_RADIO_DIV_SETUP_t rf_cmd_prop_radio_div_setup =
   .condition.rule = COND_NEVER,
   .condition.nSkip = 0x0,
   .modulation.modType = 0x1,
-  .modulation.deviation = 0x64,
+  .modulation.deviation = 0x42,
   .modulation.deviationStepSz = 0x0,
   .symbolRate.preScale = 0xF,
-  .symbolRate.rateWord = 0x8000,
+  .symbolRate.rateWord = 0x10000,
   .symbolRate.decimMode = 0x0,
-  .rxBw = 0x52,
+  .rxBw = 0x56,
   .preamConf.nPreamBytes = 0x7,
   .preamConf.preamMode = 0x0,
   .formatConf.nSwBits = 0x18,
   .formatConf.bBitReversal = 0x0,
   .formatConf.bMsbFirst = 0x1,
-  .formatConf.fecMode = 0x0,
+  .formatConf.fecMode = 0x09,
   .formatConf.whitenMode = 0x7,
   .config.frontEndMode = 0x0, /* set by driver */
   .config.biasMode = 0x0, /* set by driver */
@@ -183,18 +185,18 @@ rfc_CMD_PROP_RADIO_DIV_SETUP_PA_t rf_cmd_prop_radio_div_setup =
   .condition.rule = COND_NEVER,
   .condition.nSkip = 0x0,
   .modulation.modType = 0x1,
-  .modulation.deviation = 0x64,
+  .modulation.deviation = 0x42,
   .modulation.deviationStepSz = 0x0,
   .symbolRate.preScale = 0xF,
-  .symbolRate.rateWord = 0x8000,
+  .symbolRate.rateWord = 0x10000,
   .symbolRate.decimMode = 0x0,
-  .rxBw = 0x52,
+  .rxBw = 0x56,
   .preamConf.nPreamBytes = 0x7,
   .preamConf.preamMode = 0x0,
   .formatConf.nSwBits = 0x18,
   .formatConf.bBitReversal = 0x0,
   .formatConf.bMsbFirst = 0x1,
-  .formatConf.fecMode = 0x0,
+  .formatConf.fecMode = 0x09,
   .formatConf.whitenMode = 0x7,
   .config.frontEndMode = 0x0, /* set by driver */
   .config.biasMode = 0x0, /* set by driver */

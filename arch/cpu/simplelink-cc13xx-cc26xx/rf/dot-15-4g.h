@@ -76,6 +76,13 @@
 #define DOT_15_4G_FREQ_BAND_ID    DOT_15_4G_FREQ_BAND_863
 #endif
 /*---------------------------------------------------------------------------*/
+/* Default band selection to band 4 - 863MHz */
+#ifdef DOT_15_4G_CONF_OPERATING_MODE
+#define DOT_15_4G_OPERATING_MODE    DOT_15_4G_CONF_OPERATING_MODE
+#else
+#define DOT_15_4G_OPERATING_MODE    1
+#endif
+/*---------------------------------------------------------------------------*/
 /*
  * Channel count, spacing and other params relating to the selected band. We
  * currently only support some of the bands defined in .15.4g and for those
@@ -102,10 +109,25 @@
 #define PROP_MODE_CONF_LO_DIVIDER    0x06
 
 #elif (DOT_15_4G_FREQ_BAND_ID == DOT_15_4G_FREQ_BAND_863)
+#if DOT_15_4G_OPERATING_MODE == 1
 #define DOT_15_4G_CHAN_MIN           0
 #define DOT_15_4G_CHAN_MAX           33
 #define DOT_15_4G_FREQ_SPACING       200
 #define DOT_15_4G_CHAN0_FREQ         863125
+#elif (DOT_15_4G_OPERATING_MODE == 2) || (DOT_15_4G_OPERATING_MODE == 3)
+#define DOT_15_4G_CHAN_MIN           0
+#define DOT_15_4G_CHAN_MAX           16
+#define DOT_15_4G_FREQ_SPACING       400
+#define DOT_15_4G_CHAN0_FREQ         863225
+#endif
+
+#if DOT_15_4G_OPERATING_MODE == 1
+#define DOT_15_4G_DATARATE           50000
+#elif DOT_15_4G_OPERATING_MODE == 2
+#define DOT_15_4G_DATARATE           100000
+#elif DOT_15_4G_OPERATING_MODE == 3
+#define DOT_15_4G_DATARATE           200000
+#endif
 
 #define PROP_MODE_CONF_CENTER_FREQ   0x0362
 #define PROP_MODE_CONF_LO_DIVIDER    0x05

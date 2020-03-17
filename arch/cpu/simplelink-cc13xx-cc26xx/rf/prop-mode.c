@@ -159,7 +159,13 @@ typedef uint16_t lensz_t;
 #define FRAME_SHAVE             2   /**< RSSI (1) + Status (1) */
 /*---------------------------------------------------------------------------*/
 /* Constants used when calculating the LQI from the RSSI */
+#if DOT_15_4G_OPERATING_MODE == 1
 #define RX_SENSITIVITY_DBM                -110
+#elif DOT_15_4G_OPERATING_MODE == 2
+#define RX_SENSITIVITY_DBM                -107
+#elif DOT_15_4G_OPERATING_MODE == 3
+#define RX_SENSITIVITY_DBM                -100
+#endif
 #define RX_SATURATION_DBM                 10
 #define ED_MIN_DBM_ABOVE_RX_SENSITIVITY   10
 #define ED_MAX                            0xFF

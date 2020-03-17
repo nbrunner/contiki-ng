@@ -41,7 +41,7 @@
 #include "rf/dot-15-4g.h"
 #include "prop-settings.h"
 /*---------------------------------------------------------------------------*/
-#if DOT_15_4G_OPERATING_MODE == 1
+#if DOT_15_4G_OPERATING_MODE == 2
 /* TI-RTOS RF Mode Object */
 RF_Mode rf_prop_mode =
 {
@@ -92,12 +92,12 @@ rfc_CMD_PROP_RADIO_DIV_SETUP_t rf_cmd_prop_radio_div_setup =
   .condition.rule = COND_NEVER,
   .condition.nSkip = 0x0,
   .modulation.modType = 0x1,
-  .modulation.deviation = 0x64,
+  .modulation.deviation = 0xC8,
   .modulation.deviationStepSz = 0x0,
   .symbolRate.preScale = 0xF,
-  .symbolRate.rateWord = 0x8000,
+  .symbolRate.rateWord = 0x10000,
   .symbolRate.decimMode = 0x0,
-  .rxBw = 0x52,
+  .rxBw = 0x56,
   .preamConf.nPreamBytes = 0x7,
   .preamConf.preamMode = 0x0,
   .formatConf.nSwBits = 0x18,
@@ -183,12 +183,12 @@ rfc_CMD_PROP_RADIO_DIV_SETUP_PA_t rf_cmd_prop_radio_div_setup =
   .condition.rule = COND_NEVER,
   .condition.nSkip = 0x0,
   .modulation.modType = 0x1,
-  .modulation.deviation = 0x64,
+  .modulation.deviation = 0xC8,
   .modulation.deviationStepSz = 0x0,
   .symbolRate.preScale = 0xF,
-  .symbolRate.rateWord = 0x8000,
+  .symbolRate.rateWord = 0x10000,
   .symbolRate.decimMode = 0x0,
-  .rxBw = 0x52,
+  .rxBw = 0x56,
   .preamConf.nPreamBytes = 0x7,
   .preamConf.preamMode = 0x0,
   .formatConf.nSwBits = 0x18,
