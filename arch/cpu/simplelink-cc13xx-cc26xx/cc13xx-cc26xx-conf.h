@@ -81,6 +81,11 @@
  * @{
  */
 
+/* How long to wait for the rx read entry to become ready */
+#ifndef RF_CONF_TIMEOUT_DATA_ENTRY_BUSY
+#define RF_CONF_TIMEOUT_DATA_ENTRY_BUSY (RTIMER_SECOND / 250)    /**< 4 ms */
+#endif
+
 /*
  * Set the inactivity timeout period for the RF driver. This determines how
  * long the RF driver will wait when inactive until turning off the RF Core.
@@ -189,8 +194,13 @@
 #define NETSTACK_CONF_RADIO         prop_mode_driver
 
 /* CSMA configuration. */
+#ifndef CSMA_CONF_ACK_WAIT_TIME
 #define CSMA_CONF_ACK_WAIT_TIME                (RTIMER_SECOND / 300)
+#endif /* CSMA_CONF_ACK_WAIT_TIME */
+
+#ifndef CSMA_CONF_AFTER_ACK_DETECTED_WAIT_TIME
 #define CSMA_CONF_AFTER_ACK_DETECTED_WAIT_TIME (RTIMER_SECOND / 1000)
+#endif /* CSMA_CONF_AFTER_ACK_DETECTED_WAIT_TIME */
 #define CSMA_CONF_SEND_SOFT_ACK      1
 
 /*----- CC13xx IEEE-mode ----------------------------------------------------*/
