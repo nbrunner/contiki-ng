@@ -777,13 +777,17 @@ PT_THREAD(tsch_scan(struct pt *pt))
 
     /* Switch to a (new) channel for scanning */
     if(current_channel == 0 || now_time - current_channel_since > TSCH_CHANNEL_SCAN_DURATION) {
+#if defined(DEVICE_CC1312R)
+      /* Turn radio off for RTC to RAT Sync */
+      NETSTACK_RADIO.off();
+#endif
       /* Pick a channel at random in TSCH_JOIN_HOPPING_SEQUENCE */
       uint8_t scan_channel = TSCH_JOIN_HOPPING_SEQUENCE[
           random_rand() % sizeof(TSCH_JOIN_HOPPING_SEQUENCE)];
 
       NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNEL, scan_channel);
       current_channel = scan_channel;
-      LOG_INFO("scanning on channel %u\n", scan_channel);
+      LOG_DBG("scanning on channel %u\n", scan_channel);
 
       current_channel_since = now_time;
     }
