@@ -7,9 +7,9 @@
 
 #define RX_SENSITIVITY_DBM           -120
 #define DOT_15_4G_CHAN_MIN           0
-#define DOT_15_4G_CHAN_MAX           16
-#define DOT_15_4G_FREQ_SPACING       400
-#define DOT_15_4G_CHAN0_FREQ         863225
+#define DOT_15_4G_CHAN_MAX           33
+#define DOT_15_4G_FREQ_SPACING       200
+#define DOT_15_4G_CHAN0_FREQ         863125
 
 #define UIP_CONF_ND6_RETRANS_TIMER 10000
 
