@@ -1,0 +1,14 @@
+#ifndef PROJECT_CONF_H
+#define PROJECT_CONF_H
+
+#define DOT_15_4G_CONF_FREQ_BAND_ID DOT_15_4G_FREQ_BAND_863
+#define DOT_15_4G_CONF_OPERATING_MODE 0
+#define IEEE802154_CONF_DEFAULT_CHANNEL 1
+
+#define RX_SENSITIVITY_DBM           -100
+#define DOT_15_4G_CHAN_MIN           0
+#define DOT_15_4G_CHAN_MAX           33
+#define DOT_15_4G_FREQ_SPACING       200
+#define DOT_15_4G_CHAN0_FREQ         863125
+
+#endif
