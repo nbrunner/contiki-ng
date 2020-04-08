@@ -54,20 +54,20 @@
 #include <stdbool.h>
 /*---------------------------------------------------------------------------*/
 /* IEEE 802.15.4g frequency band identifiers (Table 68f) */
-#define DOT_15_4G_FREQ_BAND_169     0 /* 169.400–169.475 (Europe) - 169 MHz band */
-#define DOT_15_4G_FREQ_BAND_450     1 /* 450–470 (US FCC Part 22/90) - 450 MHz band */
-#define DOT_15_4G_FREQ_BAND_470     2 /* 470–510 (China) - 470 MHz band */
-#define DOT_15_4G_FREQ_BAND_780     3 /* 779–787 (China) - 780 MHz band */
-#define DOT_15_4G_FREQ_BAND_863     4 /* 863–870 (Europe) - 863 MHz band */
-#define DOT_15_4G_FREQ_BAND_896     5 /* 896–901 (US FCC Part 90) - 896 MHz band */
-#define DOT_15_4G_FREQ_BAND_901     6 /* 901–902 (US FCC Part 24) - 901 MHz band */
-#define DOT_15_4G_FREQ_BAND_915     7 /* 902–928 (US) - 915 MHz band */
-#define DOT_15_4G_FREQ_BAND_917     8 /* 917–923.5 (Korea) - 917 MHz band */
-#define DOT_15_4G_FREQ_BAND_920     9 /* 920–928 (Japan) - 920 MHz band */
-#define DOT_15_4G_FREQ_BAND_928    10 /* 928–960 (US, non-contiguous) - 928 MHz band */
-#define DOT_15_4G_FREQ_BAND_950    11 /* 950–958 (Japan) - 950 MHz band */
-#define DOT_15_4G_FREQ_BAND_1427   12 /* 1427–1518 (US and Canada, non-contiguous) - 1427 MHz band */
-#define DOT_15_4G_FREQ_BAND_2450   13 /* 2400–2483.5 2450 MHz band */
+#define DOT_15_4G_FREQ_BAND_169     0 /* 169.400-169.475 (Europe) - 169 MHz band */
+#define DOT_15_4G_FREQ_BAND_450     1 /* 450-470 (US FCC Part 22/90) - 450 MHz band */
+#define DOT_15_4G_FREQ_BAND_470     2 /* 470-510 (China) - 470 MHz band */
+#define DOT_15_4G_FREQ_BAND_780     3 /* 779-787 (China) - 780 MHz band */
+#define DOT_15_4G_FREQ_BAND_863     4 /* 863-870 (Europe) - 863 MHz band */
+#define DOT_15_4G_FREQ_BAND_896     5 /* 896-901 (US FCC Part 90) - 896 MHz band */
+#define DOT_15_4G_FREQ_BAND_901     6 /* 901-902 (US FCC Part 24) - 901 MHz band */
+#define DOT_15_4G_FREQ_BAND_915     7 /* 902-928 (US) - 915 MHz band */
+#define DOT_15_4G_FREQ_BAND_917     8 /* 917-923.5 (Korea) - 917 MHz band */
+#define DOT_15_4G_FREQ_BAND_920     9 /* 920-928 (Japan) - 920 MHz band */
+#define DOT_15_4G_FREQ_BAND_928    10 /* 928-960 (US, non-contiguous) - 928 MHz band */
+#define DOT_15_4G_FREQ_BAND_950    11 /* 950-958 (Japan) - 950 MHz band */
+#define DOT_15_4G_FREQ_BAND_1427   12 /* 1427-1518 (US and Canada, non-contiguous) - 1427 MHz band */
+#define DOT_15_4G_FREQ_BAND_2450   13 /* 2400-2483.5 2450 MHz band */
 /*---------------------------------------------------------------------------*/
 /* Default band selection to band 4 - 863MHz */
 #ifdef DOT_15_4G_CONF_FREQ_BAND_ID
